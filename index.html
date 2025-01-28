@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table of Contents Generator</title>
+    <style>
+      :root{
+        --aside-width: 200px;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+
+      .header {
+        min-height: 100vh;
+        align-content: center;
+        text-align: center;
+        font-size: 2rem;
+        margin-right: var(--aside-width);
+      }
+
+      .aside {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: var(--aside-width);
+          height: 100%;
+          overflow-y: auto;
+          background: #f9f9f9;
+          border-left: 1px solid #ccc;
+          padding: 1rem;
+      }
+
+      .list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .list_link {
+          padding: 10px;
+          border-radius: 5px;
+          background: #f9f9f9;
+          border: 1px solid #ccc;
+          text-decoration: none;
+          color: #000;
+          transition: all 0.2s ease-out;
+
+          &.cc-active {
+              background-color: red;
+              color: #fff;
+          }
+        }
+      }
+
+      .article{
+        padding: 2rem;
+        margin-top: 3rem;
+        margin-right: var(--aside-width);
+
+        > * {
+          margin-bottom: 1rem;
+        }
+
+        h2{
+          font-size: clamp(2rem, 3.0505vw + 1.2564rem, 4rem);
+          margin-top: clamp(2rem, 3.0505vw + 1.2564rem, 4rem);
+        }
+
+        *:first-child{
+          margin-top: 0;
+        }
+        *:last-child{
+          margin-bottom: 0;
+        }
+      }
+    </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Scroll Down to See <br>Article Contents</h1>
+  </header>
+  <main class="wrapper" data-toc-element="wrapper">
+      <aside class="aside">
+        <div class="list" data-toc-element="list" data-toc-link-class="list_link" data-toc-active-class="cc-active" data-toc-scrollTopOffset="100" data-toc-scrollDuration="400"></div>
+      </aside>
+      <article class="article" data-toc-element="article">
+          <h2>Blog 1st <span>Heading 2</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus rerum nesciunt sunt illo eos mollitia esse animi sit quisquam.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <h2>Blog 2nd <span>Heading 2</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribu</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus rerum nesciunt sunt illo eos mollitia esse animi sit quisquam.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <h2>Blog 3rd <span>Heading 2</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, id!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus rerum nesciunt sunt illo eos mollitia esse animi sit quisquam.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <h2>Blog 4th <span>Heading 2</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus rerum nesciunt sunt illo eos mollitia esse animi sit quisquam.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor
+          <h2>Blog 1st <span>Heading 2</span></h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eligendi nam praesentium ducimus iure a quaerat sequi ab officiis officia, soluta in ipsam explicabo ut similique nesciunt! Officiis assumenda cum sint, facere totam atque voluptate voluptates dolorum, quas, nemo autem reprehenderit quisquam error qui magnam aspernatur iusto! Voluptatibus, aspernatur suscipit? Voluptatum ducimus molestiae officia velit accusamus. Est ipsum excepturi, officiis laboriosam aut quaerat quam ducimus, dicta fugiat laudantium necessitatibus non exercitationem! Enim culpa fugiat quos inventore aperiam non voluptates et quam, dicta error repellat accusamus quidem alias possimus vel voluptas nemo amet natus molestiae laborum fuga deleniti? Assumenda, aspernatur dolore.</p>
+      </article>
+  </main>
+
+  <!--scripts-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./assets/js/script.js" defer></script>
+
+</body>
+</html>
