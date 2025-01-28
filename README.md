@@ -17,7 +17,8 @@ A lightweight, jQuery-based Table of Contents generator that automatically creat
 
 ## Installation
 
-1. Add the Dynamic Table of Contents Generator script to your project after jQuery script.```
+1. Add the Dynamic Table of Contents Generator script to your project after jQuery script.
+```
 <script src="https://cdn.jsdelivr.net/gh/Developer-Zahid/dynamic-toc-generator@latest/assets/js/script.min.js" defer></script>
 ```
 
