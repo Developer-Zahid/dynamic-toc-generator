@@ -52,8 +52,8 @@ Copy and use these data attributes to configure your Table of Contents:
 <div data-toc-element="list"
      data-toc-link-class="your-link-class"
      data-toc-active-class="your-active-class"
-     data-toc-scrollTopOffset="100"
-     data-toc-scrollDuration="400">
+     data-toc-scroll-top-offset="100"
+     data-toc-scroll-duration="400">
 </div>
 
 <!-- Content Container -->
@@ -69,8 +69,8 @@ Copy and use these data attributes to configure your Table of Contents:
 | `data-toc-element="article"` | Content container with H2 headings | Required |
 | `data-toc-link-class` | CSS class for TOC links | "toc-link" |
 | `data-toc-active-class` | CSS class for active TOC link | "active" |
-| `data-toc-scrollTopOffset` | Offset from top when scrolling (in pixels) | 0 |
-| `data-toc-scrollDuration` | Scroll animation duration (in milliseconds) | 400 |
+| `data-toc-scroll-top-offset` | Offset from top when scrolling (in pixels) | 0 |
+| `data-toc-scroll-duration` | Scroll animation duration (in milliseconds) | 400 |
 
 ### Example with All Options
 
@@ -80,8 +80,8 @@ Copy and use these data attributes to configure your Table of Contents:
         <div data-toc-element="list"
              data-toc-link-class="list_link"
              data-toc-active-class="cc-active"
-             data-toc-scrollTopOffset="100"
-             data-toc-scrollDuration="800">
+             data-toc-scroll-top-offset="100"
+             data-toc-scroll-duration="800">
         </div>
     </aside>
     <article data-toc-element="article">

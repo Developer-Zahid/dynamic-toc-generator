@@ -22,8 +22,8 @@ $(document).ready(function () {
         const currentArticle = currentWrapper.find('[data-toc-element="article"]');
         const currentLinkClass = currentList.attr('data-toc-link-class') || 'toc-link';
         const currentActiveClass = currentList.attr('data-toc-active-class') || 'active';
-        const currentScrollTopOffset = +currentList.attr('data-toc-scrollTopOffset') || 0;
-        const currentScrollDuration = +currentList.attr('data-toc-scrollDuration') || 400;
+        const currentScrollTopOffset = +currentList.attr('data-toc-scroll-top-offset') || 0;
+        const currentScrollDuration = +currentList.attr('data-toc-scroll-duration') || 400;
 
         /**
          * Debounce function to prevent rapid-fire execution
