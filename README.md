@@ -86,6 +86,30 @@ Copy and use these data attributes to configure your Table of Contents:
     </aside>
     <article data-toc-element="article">
         <!-- Your content with H2 headings -->
+        <h2>Example Heading 1</h2>
+        <h2>Example Heading 2</h2>
+    </article>
+</main>
+```
+
+### Generated Output
+
+```html
+<main data-toc-element="wrapper">
+    <aside>
+        <div data-toc-element="list"
+             data-toc-link-class="list_link"
+             data-toc-active-class="cc-active"
+             data-toc-scroll-top-offset="100"
+             data-toc-scroll-duration="800">
+            <button type="button" class="list_link cc-active" data-href="#example-heading-1">Example Heading 1</button>
+            <button type="button" class="list_link" data-href="#example-heading-2">Example Heading 2</button>
+        </div>
+    </aside>
+    <article data-toc-element="article">
+        <!-- Your content with H2 headings -->
+        <h2 id="#example-heading-1" >Example Heading 1</h2>
+        <h2 id="#example-heading-2" >Example Heading 2</h2>
     </article>
 </main>
 ```

@@ -66,7 +66,7 @@ $(document).ready(function () {
          */
         const updateActiveClass = throttle((currentEntryId) => {
             const activeLink = $(currentList).find(`.${currentActiveClass}`);
-            const newActiveLink = $(currentList).find(`a[href="#${currentEntryId}"]`);
+            const newActiveLink = $(currentList).find(`button[data-href="#${currentEntryId}"]`);
             
             if (!newActiveLink.hasClass(currentActiveClass)) {
             activeLink.removeClass(currentActiveClass);
@@ -135,13 +135,14 @@ $(document).ready(function () {
             currentTableOfContentsObserver.observe(eachHeading);
             
             // Create and append TOC link
-            const createdTableOfContentsItem = $("<a>")
+            const createdTableOfContentsItem = $("<button>")
             .text(currentHeadingText)
+            .attr("type", "button")
             .attr("class", currentLinkClass)
-            .attr("href", "#" + convertedHeadingId)
+            .attr("data-href", "#" + convertedHeadingId)
             .on('click', function(e) {
                 e.preventDefault();
-                const targetElement = $($(this).attr('href'));
+                const targetElement = $($(this).attr('data-href'));
                 const offset = currentScrollTopOffset;
                 const targetPosition = targetElement.offset().top - offset;
 
